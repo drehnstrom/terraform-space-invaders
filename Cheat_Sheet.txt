@@ -4,7 +4,7 @@ terraform init
 terrafom plan
 
 # Create everything
-terraform apply -auto-approve -var 'poject=your-project-id'
+terraform apply -auto-approve -var 'project=your-project-id'
 
 # Delete everything
 terraform destroy -auto-approve
