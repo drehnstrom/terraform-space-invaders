@@ -1,7 +1,7 @@
 # Allow internal traffic on all ports
 resource "google_compute_firewall" "allow-internal" {
   name    = "${google_compute_network.vpc.name}-allow-internal"
-  network = "${google_compute_network.vpc.name}"
+  network = google_compute_network.vpc.name
   allow {
     protocol = "icmp"
   }
@@ -21,7 +21,7 @@ resource "google_compute_firewall" "allow-internal" {
 # Allow http
 resource "google_compute_firewall" "allow-http" {
   name    = "${google_compute_network.vpc.name}-allow-http"
-  network = "${google_compute_network.vpc.name}"
+  network = google_compute_network.vpc.name
   allow {
     protocol = "tcp"
     ports    = ["80"]
@@ -33,7 +33,7 @@ resource "google_compute_firewall" "allow-http" {
 # allow ssh
 resource "google_compute_firewall" "allow-ssh" {
   name    = "${google_compute_network.vpc.name}-allow-ssh"
-  network = "${google_compute_network.vpc.name}"
+  network = google_compute_network.vpc.name
   allow {
     protocol = "tcp"
     ports    = ["22"]
